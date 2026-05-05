@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
 
-export default function CheckDemage() {
+export default function CheckDamage() {
     const [inputs,setInputs] = useState({szumi:false, stukot: false})
     const [view,setView] = useState("none")
 
