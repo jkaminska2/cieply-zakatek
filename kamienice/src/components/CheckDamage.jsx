@@ -7,9 +7,10 @@ export default function CheckDamage({ element, onSymptomsChange }) {
       title: "Grzejnik",
       videoSrc: "grzejnik-test.mp4",
       options: [
+
         { id: "szumi", label: "Szumi" },
         { id: "stukot", label: "Stukot" },
-        { id: "zimny_dol", label: "Zimny na dole" }
+        { id: "zimny", label: "Jest zimny" }
       ]
     },
     okno: {
@@ -34,21 +35,8 @@ export default function CheckDamage({ element, onSymptomsChange }) {
 
     const selected = Object.keys(updatedInputs).filter(key => updatedInputs[key]);
     
-    // Wysyłamy do rodzica natychmiast, żeby DoAlone mógł się przefiltrować
     if (onSymptomsChange) {
       onSymptomsChange(selected);
-    }
-  };
-
-  // DODANA FUNKCJA: Obsługuje kliknięcie przycisku i aktualizuje lokalny komunikat
-  const handleCheck = (e) => {
-    e.preventDefault();
-    const selected = Object.keys(inputs).filter(key => inputs[key]);
-    
-    if (selected.length > 0) {
-      setView(selected.join("_"));
-    } else {
-      setView("none");
     }
   };
 
@@ -59,12 +47,12 @@ export default function CheckDamage({ element, onSymptomsChange }) {
       <div className="video-container">
         <video width="640" height="360" controls poster={`${element}-miniatura.jpg`}>
           <source src={currentConfig.videoSrc} type="video/mp4" />
-          Twoja przeglądarka nie obsługuje wideo.
+          Twoja przeglądarka nie obsługuje wideo
         </video>
       </div>
 
       <div className="diagnosis-section">
-        <h3>Co się dzieje z {currentConfig.title.toLowerCase()}?</h3>
+        <h3>Co się dzieje?</h3>
         <div className="checkbox-group">
           {currentConfig.options.map((option) => (
             <label key={option.id} className="checkbox-item">
@@ -77,21 +65,6 @@ export default function CheckDamage({ element, onSymptomsChange }) {
               />
             </label>
           ))}
-        </div>
-        
-        <button className="btn-send" onClick={handleCheck}>
-          Sprawdź diagnozę
-        </button>
-
-        <div className="wynik">
-          {view === "none" ? (
-            <p className="placeholder-text">Wybierz objawy i kliknij przycisk, aby zobaczyć wynik</p>
-          ) : (
-            <div className="result-box">
-              <strong>Wykryto: {view.replace(/_/g, ", ")}</strong>
-              <p>Na podstawie wybranych objawów zalecamy sprawdzenie sekcji "Co możesz zrobić samemu" poniżej.</p>
-            </div>
-          )}
         </div>
       </div>
     </div>

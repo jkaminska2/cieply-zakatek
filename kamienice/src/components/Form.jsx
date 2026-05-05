@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/form.css";
+import "../styles/Form.css";
 
 export default function Form() {
   const [selectedMode, setSelectedMode] = useState("diagnosis");
