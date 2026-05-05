@@ -7,9 +7,15 @@ export default function DoAlone({ element, activeSymptoms = [] }) {
   const stepsGrzejnik = [
     {
       id: "odpowietrzanie",
-      symptom: "zimny_dol",
+      symptom: "zimny",
       title: "Odpowietrzyć grzejnik",
       desc: "Jeśli góra grzejnika jest zimna, potrzebujesz kluczyka za ok. 2-5 zł. Włóż go w zawór, przekręć lekko, aż usłyszysz syk powietrza, a potem poczuj kropelkę wody. Zakręć i gotowe!",
+    },
+    {
+      id: "cisnienie",
+      symptom: "stukot",
+      title: "Regulacja zaworu",
+      desc: "Stukanie często oznacza zbyt wysokie ciśnienie lub odwrotne podłączenie. Spróbuj zmienić nastawę na głowicy termostatycznej."
     },
     {
       id: "ekran",
@@ -36,6 +42,12 @@ export default function DoAlone({ element, activeSymptoms = [] }) {
       desc: "Kup samoprzylepne uszczelki gumowe (EPDM). Wyjdź stare, wyczyść ramę alkoholem i naklej nowe w miejscach, gdzie czuć powiew zimnego powietrza.",
     },
     {
+      id: "regulacja",
+      symptom: "ciezko_chodzi",
+      title: "Nasmarowanie okuć",
+      desc: "Użyj smaru technicznego w sprayu na ruchome elementy okna, aby klamka znów chodziła lekko."
+    },
+    {
       id: "tryb_zimowy",
       title: "Ustawić tryb zimowy",
       desc: "Większość nowoczesnych okien ma bolce na boku skrzydła. Przekręć je kluczem imbusowym tak, by mocniej dociskały uszczelkę do ramy (szczelina powinna być mniejsza).",
@@ -59,7 +71,7 @@ export default function DoAlone({ element, activeSymptoms = [] }) {
 
   return (
     <div className="doAlone">
-      <h3>{activeSymptoms.length > 0 ? "Zalecane działania dla Ciebie:" : "Ogólne porady:"}</h3>
+      <h3>{"Co możesz zrobić sam?"}</h3>
       <ul className="instruction-list">
         {filteredSteps.map((step) => (
           <li key={step.id} className="instruction-item">
