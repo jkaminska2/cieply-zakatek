@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "../styles/DoAlone.css";
 
-export default function DoAlone({ element }) {
+export default function DoAlone({ element, activeSymptoms = [] }) {
   const [activeStep, setActiveStep] = useState(null);
 
   const stepsGrzejnik = [
     {
       id: "odpowietrzanie",
+      symptom: "zimny_dol",
       title: "Odpowietrzyć grzejnik",
       desc: "Jeśli góra grzejnika jest zimna, potrzebujesz kluczyka za ok. 2-5 zł. Włóż go w zawór, przekręć lekko, aż usłyszysz syk powietrza, a potem poczuj kropelkę wody. Zakręć i gotowe!",
     },
@@ -30,6 +31,7 @@ export default function DoAlone({ element }) {
   const stepsOkno = [
     {
       id: "uszczelki",
+      symptom: "wieje",
       title: "Wymienić uszczelki",
       desc: "Kup samoprzylepne uszczelki gumowe (EPDM). Wyjdź stare, wyczyść ramę alkoholem i naklej nowe w miejscach, gdzie czuć powiew zimnego powietrza.",
     },
@@ -45,7 +47,11 @@ export default function DoAlone({ element }) {
     },
   ];
 
-  const currentSteps = element === "grzejnik" ? stepsGrzejnik : stepsOkno;
+  const allSteps = element.toLowerCase() === "grzejnik" ? stepsGrzejnik : stepsOkno;
+
+  const filteredSteps = allSteps.filter(step => 
+    !step.symptom || activeSymptoms.includes(step.symptom)
+  );
 
   const toggleStep = (id) => {
     setActiveStep(activeStep === id ? null : id);
@@ -53,16 +59,13 @@ export default function DoAlone({ element }) {
 
   return (
     <div className="doAlone">
-      <h3>Co można zrobić samemu?</h3>
+      <h3>{activeSymptoms.length > 0 ? "Zalecane działania dla Ciebie:" : "Ogólne porady:"}</h3>
       <ul className="instruction-list">
-        {currentSteps.map((step) => (
+        {filteredSteps.map((step) => (
           <li key={step.id} className="instruction-item">
             <div className="instruction-header">
               <span>{step.title}</span>
-              <button
-                className="btn-see-how"
-                onClick={() => toggleStep(step.id)}
-              >
+              <button className="btn-see-how" onClick={() => toggleStep(step.id)}>
                 {activeStep === step.id ? "ZAMKNIJ" : "ZOBACZ JAK"}
               </button>
             </div>

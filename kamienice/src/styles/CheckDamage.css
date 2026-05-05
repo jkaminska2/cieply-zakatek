@@ -1,0 +1,140 @@
+/* CheckDamage.css */
+
+.check-damage {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid #3498db;
+}
+
+.check-damage h2 {
+  color: #2c3e50;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+/* Wideo */
+.video-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #2c3e50;
+  margin-bottom: 25px;
+}
+
+.video-container video {
+  width: 100%;
+  display: block;
+}
+
+/* Sekcja diagnozy */
+.diagnosis-section h3 {
+  font-size: 1.2rem;
+  color: #34495e;
+  margin-bottom: 15px;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.checkbox-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  border: 2px solid #edf2f7;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.checkbox-item:hover {
+  background-color: #eef6fc;
+  border-color: #3498db;
+}
+
+/* Ukrycie domyślnego checkboxa i customizacja (opcjonalnie) */
+.checkbox-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #3498db;
+}
+
+/* Przycisk akcji */
+.btn-send {
+  width: 100%;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.1s, background-color 0.3s;
+}
+
+.btn-send:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+.btn-send:active {
+  transform: translateY(0);
+}
+
+/* Wynik i Porada */
+.wynik {
+  margin-top: 20px;
+  min-height: 80px;
+}
+
+.placeholder-text {
+  text-align: center;
+  color: #95a5a6;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.result-box {
+  background-color: #ebf9ff;
+  border: 1px solid #3498db;
+  padding: 15px;
+  border-radius: 8px;
+  color: #2c3e50;
+  animation: slideIn 0.3s ease-out;
+}
+
+.result-box strong {
+  display: block;
+  color: #2980b9;
+  margin-bottom: 5px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsywność */
+@media (min-width: 600px) {
+  .checkbox-group {
+    grid-template-columns: 1fr 1fr;
+  }
+}

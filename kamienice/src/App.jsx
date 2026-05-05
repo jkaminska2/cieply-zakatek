@@ -8,7 +8,7 @@ import ElementWindow from "./components/ElementWindow";
 export default function App() {
   return (
     <div class="app">
-      <h1>Trzymaj Się Ciepło!!!</h1>
+      <h1>Ogrzej swój kąt!</h1>
       <ElementWindow element={"grzejnik"}></ElementWindow>
     </div>
   )
