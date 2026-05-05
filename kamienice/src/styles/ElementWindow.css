@@ -1,14 +1,14 @@
 .element {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 40px;
-  background-color: #fcfcfc;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  font-family: 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 33%;
+    margin: auto;
+    padding: 40px;
+    background-color: #e4c4a5;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
 .element h1 {
@@ -18,7 +18,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
-  border-bottom: 3px solid #3498db;
+  border-bottom: 3px solid #D4A373;
   padding-bottom: 10px;
   display: inline-block;
   align-self: center;
@@ -31,7 +31,7 @@
   background-color: #f0f3f5;
   padding: 15px 20px;
   border-radius: 10px;
-  border-left: 5px solid #3498db;
+  border-left: 5px solid #D4A373;
   margin: 10px 0;
 }
 

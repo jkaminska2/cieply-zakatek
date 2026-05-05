@@ -6,7 +6,7 @@
   padding: 25px;
   margin-bottom: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border-left: 6px solid #3498db;
+  border-left: 6px solid #D4A373;
 }
 
 .check-damage h2 {
@@ -50,7 +50,7 @@
   align-items: center;
   padding: 15px 20px;
   background-color: #f8f9fa;
-  border: 2px solid #edf2f7;
+  border: 2px solid #D4A373;
   border-radius: 10px;
   cursor: pointer;
   font-weight: 500;
@@ -58,21 +58,21 @@
 }
 
 .checkbox-item:hover {
-  background-color: #eef6fc;
-  border-color: #3498db;
+  background-color: #fcf5ee;
+  border-color: #D4A373;
 }
 
 /* Ukrycie domyślnego checkboxa i customizacja (opcjonalnie) */
 .checkbox-item input[type="checkbox"] {
   width: 20px;
   height: 20px;
-  accent-color: #3498db;
+  accent-color: #D4A373;
 }
 
 /* Przycisk akcji */
 .btn-send {
   width: 100%;
-  background-color: #2ecc71;
+  background-color: #CCD5AE;
   color: white;
   border: none;
   padding: 15px;
@@ -85,7 +85,7 @@
 }
 
 .btn-send:hover {
-  background-color: #27ae60;
+  background-color: #CCD5AE;
   transform: translateY(-2px);
 }
 
@@ -107,8 +107,8 @@
 }
 
 .result-box {
-  background-color: #ebf9ff;
-  border: 1px solid #3498db;
+  background-color: #FAEDCD;
+  border: 1px solid #D4A373;
   padding: 15px;
   border-radius: 8px;
   color: #2c3e50;
@@ -117,7 +117,7 @@
 
 .result-box strong {
   display: block;
-  color: #2980b9;
+  color: #D4A373;
   margin-bottom: 5px;
 }
 
@@ -135,6 +135,7 @@
 /* Responsywność */
 @media (min-width: 600px) {
   .checkbox-group {
-    grid-template-columns: 1fr 1fr;
+    /*grid-template-columns: 1fr 1fr;*/
+      flex-direction: column;
   }
 }
