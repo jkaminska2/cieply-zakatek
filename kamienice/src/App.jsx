@@ -8,7 +8,6 @@ export default function App() {
   return (
     <div class="app">
       <h1>Trzymaj Się Ciepło!!!</h1>
-      
     </div>
   )
 }
