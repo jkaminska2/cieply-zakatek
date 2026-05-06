@@ -22,6 +22,9 @@
   font-size: 0.95rem;
   margin-bottom: 20px;
 }
+span{
+  padding-right: 10px;
+}
 
 .instruction-item {
   margin-bottom: 12px;
