@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+  font-family: 'Montserrat', sans-serif;
+  background: #ffffff;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.logo {
+  font-family: 'Manrope', sans-serif;
+  color: #798553;
+  font-weight: 800;
+  font-size: 1.9rem;
+  letter-spacing: -1px;
+  margin: 0;
+  padding: 0;
+  text-transform: lowercase;
+}
+
+.logo span {
+  color: #8b5e34;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #4a4a4a;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.25s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #8b5e34;
+  transition: width 0.25s ease;
+  border-radius: 2px;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #8b5e34;
+}
