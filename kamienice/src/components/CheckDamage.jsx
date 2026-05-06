@@ -67,7 +67,6 @@ export default function CheckDamage({ element, onSymptomsChange }) {
                   height="360"
                   src={currentConfig.videoSrc}
                   title={currentConfig.title}
-                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="video-frame"
