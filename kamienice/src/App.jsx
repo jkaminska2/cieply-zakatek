@@ -3,8 +3,26 @@ import "./App.css";
 import ElementWindow from "./components/ElementWindow";
 import Navbar from "./components/Navbar";
 
+function showTooltip(text) {
+  const t = document.getElementById("cursor-tooltip");
+  t.innerText = text;
+  t.style.opacity = 1;
+}
+
+function hideTooltip() {
+  const t = document.getElementById("cursor-tooltip");
+  t.style.opacity = 0;
+}
+
+function moveTooltip(e) {
+  const t = document.getElementById("cursor-tooltip");
+  t.style.left = e.pageX + 15 + "px";
+  t.style.top = e.pageY + 15 + "px";
+}
+
 export default function App() {
   const [selectedElement, setSelectedElement] = useState(null);
+  
 
   return (
     <div className="main">
@@ -19,14 +37,20 @@ export default function App() {
             {/* OKNO */}
             <div
               className="hotspot window-hotspot"
+              onMouseEnter={() => showTooltip("Okno")}
+              onMouseLeave={hideTooltip}
+              onMouseMove={moveTooltip}
               onClick={() => setSelectedElement("okno")}
             >
             </div>
 
             {/* GRZEJNIK */}
             <div
-              className="hotspot radiator-hotspot"
-              onClick={() => setSelectedElement("grzejnik")}
+                className="hotspot radiator-hotspot"
+                onMouseEnter={() => showTooltip("Grzejnik")}
+                onMouseLeave={hideTooltip}
+                onMouseMove={moveTooltip}
+                onClick={() => setSelectedElement("grzejnik")}
             >
 
             </div>
@@ -46,6 +70,7 @@ export default function App() {
           )}
         </div>
       </div>
+      <div id="cursor-tooltip"></div>
     </div>
   );
 }
