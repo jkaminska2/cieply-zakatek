@@ -21,7 +21,6 @@ export default function App() {
               className="hotspot window-hotspot"
               onClick={() => setSelectedElement("okno")}
             >
-              <span className="tooltip">Okno</span>
             </div>
 
             {/* GRZEJNIK */}
@@ -29,7 +28,7 @@ export default function App() {
               className="hotspot radiator-hotspot"
               onClick={() => setSelectedElement("grzejnik")}
             >
-              <span className="tooltip">Grzejnik</span>
+
             </div>
           </div>
         </div>
