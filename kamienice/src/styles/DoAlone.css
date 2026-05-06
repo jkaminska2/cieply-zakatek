@@ -32,7 +32,7 @@
 }
 
 .instruction-item:hover {
-  border-color: #CAD1A7;
+  border-color: #798553;
 }
 
 .instruction-header {
@@ -44,7 +44,7 @@
 }
 
 .btn-see-how {
-  background-color: #CAD1A7;
+  background-color: #798553;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -55,7 +55,7 @@
 }
 
 .btn-see-how:hover {
-  background-color: #BCC398;
+  background-color: #798553;
 }
 
 .instruction-content {

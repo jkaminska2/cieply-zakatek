@@ -31,7 +31,7 @@
   display: block;
   width: 50px;
   height: 5px;
-  background: #CAD1A7;
+  background: #798553;
   margin: 10px auto 0;
   border-radius: 10px;
 }
@@ -43,7 +43,7 @@
   background-color: #fcfdfa;
   padding: 18px 25px;
   border-radius: 15px;
-  border-left: 6px solid #CAD1A7;
+  border-left: 6px solid #798553;
   margin: 5px 0;
   transition: transform 0.2s ease;
 }
@@ -67,7 +67,7 @@
 }
 
 .close-btn:hover {
-  background-color: #CAD1A7;
+  background-color: #798553;
   color: white;
 }
 
