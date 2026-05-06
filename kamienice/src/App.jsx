@@ -8,12 +8,12 @@ import ElementWindow from "./components/ElementWindow";
 
 export default function App() {
   return (
-      <div className="main">
-          <h1 className="haslo">Ciepły zakątek</h1>
-          <div className="app">
-              <div className="model"></div>
-              <ElementWindow className="pop" element={"grzejnik"}></ElementWindow>
-          </div>
+    <div className="main">
+      <h1 className="haslo">Ciepły zakątek</h1>
+      <div className="app">
+        <div className="model"></div>
+        <ElementWindow className="pop" element={"grzejnik"}></ElementWindow>
       </div>
+    </div>
   );
 }
