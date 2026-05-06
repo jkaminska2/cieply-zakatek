@@ -40,12 +40,12 @@ label {
 
 .input:focus {
   outline: none;
-  border-color: #CAD1A7;
+  border-color: #cad1a7;
   background-color: #fcfdfa;
 }
 
 .btn {
-  background: #CAD1A7;
+  background: #cad1a7;
   color: white;
   border: none;
   padding: 12px 18px;
@@ -56,7 +56,7 @@ label {
 }
 
 .btn:hover {
-  background: #BCC398;
+  background: #bcc398;
 }
 
 .list-item {
@@ -73,7 +73,7 @@ label {
   background: #ffffff;
   padding: 25px;
   border-radius: 15px;
-  border: 2px solid #CAD1A7;
+  border: 2px solid #cad1a7;
   margin-top: 20px;
 }
 
@@ -81,4 +81,52 @@ label {
   border-bottom: 1px solid #f0f0f0;
   padding-bottom: 8px;
   color: #495057;
+}
+
+/* Kontener grupy */
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Badge nad inputem */
+.ai-badge {
+  position: absolute;
+  top: -12px;
+  right: 12px;
+  background: linear-gradient(135deg, #e76f51, #9b51e0);
+  color: white;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+}
+
+/* Specyficzne style dla Inputa AI */
+.input-ai {
+  padding: 14px;
+  border-radius: 12px;
+  border: 2px solid transparent !important; /* Ważne pod gradient */
+  background-image:
+    linear-gradient(white, white), linear-gradient(to right, #e76f51, #9b51e0);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-ai:focus {
+  box-shadow: 0 0 15px rgba(155, 81, 224, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Stylizacja samego placeholdera (szary kolor, żeby był czytelny) */
+.input-ai::placeholder {
+  color: #a08d8a;
+  transition: opacity 0.5s ease-in-out;
+  font-style: italic;
 }
