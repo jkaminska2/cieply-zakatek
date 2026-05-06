@@ -15,18 +15,18 @@ export default function App() {
           <div className="model-wrapper">
             {/* Obrazek musi być tłem dla hotspotów */}
             <img src="/model.png" alt="Model" className="side-model" />
-            
+
             {/* OKNO */}
-            <div 
-              className="hotspot window-hotspot" 
+            <div
+              className="hotspot window-hotspot"
               onClick={() => setSelectedElement("okno")}
             >
               <span className="tooltip">Okno</span>
             </div>
 
             {/* GRZEJNIK */}
-            <div 
-              className="hotspot radiator-hotspot" 
+            <div
+              className="hotspot radiator-hotspot"
               onClick={() => setSelectedElement("grzejnik")}
             >
               <span className="tooltip">Grzejnik</span>
@@ -37,7 +37,6 @@ export default function App() {
         <div className="info-panel">
           {selectedElement ? (
             <div className="element-active">
-              <button className="close-btn" onClick={() => setSelectedElement(null)}>×</button>
               <ElementWindow element={selectedElement} />
             </div>
           ) : (
