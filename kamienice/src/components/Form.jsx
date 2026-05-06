@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../styles/form.css";
 
 export default function Form() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [selectedMode, setSelectedMode] = useState("diagnosis");
   const [selectedElement, setSelectedElement] = useState("kaloryfer");
   const [specialists] = useState([
@@ -29,8 +30,19 @@ export default function Form() {
   const [specialistsSet, setSpecialistsSet] = useState(false);
 
   const [availableDotations] = useState([
-    { id: 1, name: "Dotation 1", amount: "1000" },
-    { id: 2, name: "Dotation 2", amount: "2000" },
+    {
+      id: 1,
+      name: "Czyste Powietrze",
+      amount: "do 135 000",
+      description: "Ogólnopolski program na wymianę pieca i termomodernizację.",
+    },
+    {
+      id: 2,
+      name: "Gdańska Dotacja Miejska",
+      amount: "do 5 000",
+      description:
+        "Lokalne wsparcie na zmianę systemu ogrzewania (np. na OZE).",
+    },
   ]);
 
   const handleModeChange = (e) => setSelectedMode(e.target.value);
@@ -48,6 +60,12 @@ export default function Form() {
     setModElemChosen(true);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Tutaj logika wysyłki danych do API
+    setIsSubmitted(true);
+  };
+
   const [currentPlaceholder, setCurrentPlaceholder] = useState(0);
   const hints = [
     "Opisz problem, np. 'kaloryfer jest zimny na dole'...",
@@ -62,6 +80,22 @@ export default function Form() {
     }, 3000); // Zmiana co 3 sekundy
     return () => clearInterval(interval);
   }, []);
+
+  if (isSubmitted) {
+    return (
+      <div className="card success-message">
+        <h2>🎉 Sukces!</h2>
+        <p>Twoje zapytanie dotyczące modernizacji zostało wysłane.</p>
+        <p>
+          Specjalista <strong>{specialists[0].name}</strong> skontaktuje się z
+          Tobą w ciągu 24h.
+        </p>
+        <button className="btn" onClick={() => setIsSubmitted(false)}>
+          Wróć do formularza
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="container">
@@ -170,12 +204,58 @@ export default function Form() {
                 {specialistsSet && (
                   <div className="result">
                     <h1>Szacowany koszt: 4670 zł</h1>
-                    <h2>Dotacje:</h2>
-                    {availableDotations.map((d) => (
-                      <p key={d.id}>
-                        {d.name} - {d.amount} zł
-                      </p>
-                    ))}
+                    <h2 style={{ marginTop: "20px" }}>
+                      Dostępne programy wsparcia:
+                    </h2>
+
+                    <div className="dotations-list">
+                      {availableDotations.map((d) => (
+                        <div
+                          key={d.id}
+                          className="dotation-card"
+                          style={{
+                            padding: "10px",
+                            border: "1px solid #ddd",
+                            borderRadius: "8px",
+                            marginBottom: "10px",
+                          }}
+                        >
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            <span>{d.name}</span>
+                            <span style={{ color: "#2ecc71" }}>
+                              +{d.amount} zł
+                            </span>
+                          </div>
+                          <p
+                            style={{
+                              fontSize: "0.85rem",
+                              color: "#666",
+                              margin: "5px 0 0",
+                            }}
+                          >
+                            {d.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <p
+                      className="hint"
+                      style={{
+                        fontSize: "0.75rem",
+                        color: "#999",
+                        marginTop: "15px",
+                      }}
+                    >
+                      * Kwoty dotacji zależą od progu dochodowego i zakresu
+                      prac.
+                    </p>
                   </div>
                 )}
               </div>
