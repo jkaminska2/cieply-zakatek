@@ -1,27 +1,22 @@
+/* Form.css */
+
 .container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #faf3e0;
+  background-color: #f8f9fa;
   padding: 20px;
-  font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
 .card {
   width: 100%;
   max-width: 650px;
-  background: #fffaf0;
+  background: #ffffff;
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(93, 64, 55, 0.15);
-  border: 1px solid #eee0c9;
-}
-
-h1, h2 {
-  color: #e76f51; /* Koralowy */
-  text-align: center;
-  margin-bottom: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
 }
 
 .form {
@@ -32,91 +27,106 @@ h1, h2 {
 
 label {
   font-weight: 600;
-  color: #5d4037;
+  color: #2c3e50;
   margin-bottom: -10px;
-  font-size: 1.1rem;
 }
 
 .input {
   padding: 14px;
   border-radius: 12px;
-  border: 2px solid #d7ccc8;
-  font-size: 1rem;
-  background-color: #ffffff;
-  color: #3e2723;
+  border: 2px solid #ced4da;
   transition: border-color 0.3s;
 }
 
 .input:focus {
   outline: none;
-  border-color: #e76f51;
-  background-color: #fffcf5;
+  border-color: #cad1a7;
+  background-color: #fcfdfa;
 }
 
-.list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 10px 0;
+.btn {
+  background: #cad1a7;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #bcc398;
 }
 
 .list-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background: #fdf5e6;
+  background: #ffffff;
   padding: 12px 18px;
   border-radius: 10px;
-  border: 1px solid #eee0c9;
-  color: #4e342e;
-  font-weight: 500;
-}
-
-.btn {
-  background: #e76f51;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.1s;
-  box-shadow: 0 3px 0 #b35641;
-}
-
-.btn:hover {
-  background: #f4a261;
-}
-
-.btn:active {
-  transform: translateY(2px);
-  box-shadow: 0 1px 0 #b35641;
+  border: 1px solid #e9ecef;
+  margin-bottom: 8px;
 }
 
 .result {
-  background: #fff3e0;
+  background: #ffffff;
   padding: 25px;
   border-radius: 15px;
-  border: 2px solid #ffccbc;
-  color: #283618;
+  border: 2px solid #cad1a7;
   margin-top: 20px;
-  animation: slideIn 0.4s ease-out;
-}
-
-.result h1, .result h2 {
-  text-align: left;
-  margin: 10px 0;
 }
 
 .result p {
-  font-size: 1.1rem;
-  color: #5d4037;
-  margin: 5px 0;
-  border-bottom: 1px solid #ffccbc;
-  padding-bottom: 5px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 8px;
+  color: #495057;
 }
 
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Kontener grupy */
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Badge nad inputem */
+.ai-badge {
+  position: absolute;
+  top: -12px;
+  right: 12px;
+  background: linear-gradient(135deg, #e76f51, #9b51e0);
+  color: white;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+}
+
+/* Specyficzne style dla Inputa AI */
+.input-ai {
+  padding: 14px;
+  border-radius: 12px;
+  border: 2px solid transparent !important; /* Ważne pod gradient */
+  background-image:
+    linear-gradient(white, white), linear-gradient(to right, #e76f51, #9b51e0);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-ai:focus {
+  box-shadow: 0 0 15px rgba(155, 81, 224, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Stylizacja samego placeholdera (szary kolor, żeby był czytelny) */
+.input-ai::placeholder {
+  color: #a08d8a;
+  transition: opacity 0.5s ease-in-out;
+  font-style: italic;
 }

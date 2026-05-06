@@ -1,14 +1,15 @@
+/* ElementWindow.css */
+
 .element {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 33%;
-    margin: auto;
-    padding: 40px;
-    background-color: #e4c4a5;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    font-family: 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 33%;
+  margin: auto;
+  padding: 40px;
+  background-color: #ffffff; /* Białe tło */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .element h1 {
@@ -18,9 +19,8 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
-  border-bottom: 3px solid #D4A373;
+  border-bottom: 3px solid #CAD1A7; /* Akcent zielony */
   padding-bottom: 10px;
-  display: inline-block;
   align-self: center;
 }
 
@@ -28,25 +28,16 @@
   font-size: 1.2rem;
   font-weight: 500;
   color: #555;
-  background-color: #f0f3f5;
+  background-color: #f8f9fa;
   padding: 15px 20px;
   border-radius: 10px;
-  border-left: 5px solid #D4A373;
+  border-left: 5px solid #CAD1A7;
   margin: 10px 0;
 }
 
-.element .doAlone {
-  width: 100%;
-  margin: 0;
-}
-
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .element {
-    margin: 10px;
+    max-width: 90%;
     padding: 20px;
-  }
-  
-  .element h1 {
-    font-size: 1.8rem;
   }
 }

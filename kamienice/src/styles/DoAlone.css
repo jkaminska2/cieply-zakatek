@@ -1,12 +1,13 @@
+/* DoAlone.css */
+
 .doAlone {
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
 }
 
 .doAlone h3 {
@@ -22,11 +23,6 @@
   margin-bottom: 20px;
 }
 
-.instruction-list {
-  list-style: none;
-  padding: 0;
-}
-
 .instruction-item {
   margin-bottom: 12px;
   border: 1px solid #e0e0e0;
@@ -36,7 +32,7 @@
 }
 
 .instruction-item:hover {
-  border-color: #D4A373;
+  border-color: #CAD1A7;
 }
 
 .instruction-header {
@@ -47,26 +43,19 @@
   background-color: #f8f9fa;
 }
 
-.instruction-header span {
-  font-weight: 600;
-  font-size: 1.05rem;
-}
-
 .btn-see-how {
-  background-color: #D4A373;
+  background-color: #CAD1A7;
   color: white;
   border: none;
   padding: 8px 16px;
   border-radius: 20px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 0.8rem;
-  transition: background-color 0.2s ease;
-  min-width: 110px;
+  transition: background-color 0.2s;
 }
 
 .btn-see-how:hover {
-  background-color: #D4A373;
+  background-color: #BCC398;
 }
 
 .instruction-content {
@@ -74,8 +63,6 @@
   background-color: #fff;
   border-top: 1px solid #e0e0e0;
   line-height: 1.6;
-  font-size: 0.95rem;
-  color: #444;
   animation: slideDown 0.3s ease-out;
 }
 
@@ -87,17 +74,7 @@
   border-radius: 4px;
 }
 
-.warning-box strong {
-  color: #c0392b;
-}
-
 @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

@@ -16,5 +16,6 @@ export default function App() {
             <ElementWindow className="pop" element={"grzejnik"}></ElementWindow>
         </div>
       </div>
+    </div>
   );
 }

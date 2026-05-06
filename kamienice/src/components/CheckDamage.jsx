@@ -5,12 +5,14 @@ export default function CheckDamage({ element, onSymptomsChange }) {
   const config = {
     grzejnik: {
       title: "Grzejnik",
-      videoSrc: "grzejnik-test.mp4",
+      videoSrc: "https://www.youtube.com/embed/f0G41epidNQ?si=DBjT1I4l20Q9GJi2",
+        isYoutube: true,
       options: [
-
-        { id: "szumi", label: "Szumi" },
-        { id: "stukot", label: "Stukot" },
-        { id: "zimny", label: "Jest zimny" }
+        { id: "grzanie", label: "grzanie w ścianę, a nie w pokój" },
+        { id: "kurz", label: "zakurzone żebra" },
+        { id: "zimny_dol", label: "zimny na dole" },
+          { id: "zimno", label: "czuję, że w pokoju jest chłodno, mimo gorącego grzejnika" },
+        { id: "inne", label: "Inne" }
       ]
     },
     okno: {
@@ -35,8 +37,21 @@ export default function CheckDamage({ element, onSymptomsChange }) {
 
     const selected = Object.keys(updatedInputs).filter(key => updatedInputs[key]);
     
+    // Wysyłamy do rodzica natychmiast, żeby DoAlone mógł się przefiltrować
     if (onSymptomsChange) {
       onSymptomsChange(selected);
+    }
+  };
+
+  // DODANA FUNKCJA: Obsługuje kliknięcie przycisku i aktualizuje lokalny komunikat
+  const handleCheck = (e) => {
+    e.preventDefault();
+    const selected = Object.keys(inputs).filter(key => inputs[key]);
+    
+    if (selected.length > 0) {
+      setView(selected.join("_"));
+    } else {
+      setView("none");
     }
   };
 
@@ -45,14 +60,26 @@ export default function CheckDamage({ element, onSymptomsChange }) {
       <h2>Jak sprawdzić {currentConfig.title.toLowerCase()}?</h2>
       
       <div className="video-container">
-        <video width="640" height="360" controls poster={`${element}-miniatura.jpg`}>
-          <source src={currentConfig.videoSrc} type="video/mp4" />
-          Twoja przeglądarka nie obsługuje wideo
-        </video>
+          {currentConfig.isYoutube ? (
+              /* Renderowanie YouTube */
+              <iframe
+                  width="100%"
+                  height="360"
+                  src={currentConfig.videoSrc}
+                  title={currentConfig.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="video-frame"
+              ></iframe>
+          ) : (
+            <video width="640" height="360" controls poster={`${element}-miniatura.jpg`}>
+              <source src={currentConfig.videoSrc} type="video/mp4" />
+              Twoja przeglądarka nie obsługuje wideo.
+            </video>
+          )}
       </div>
-
       <div className="diagnosis-section">
-        <h3>Co się dzieje?</h3>
+        <h3>Co się dzieje z {currentConfig.title.toLowerCase()}?</h3>
         <div className="checkbox-group">
           {currentConfig.options.map((option) => (
             <label key={option.id} className="checkbox-item">
@@ -65,6 +92,21 @@ export default function CheckDamage({ element, onSymptomsChange }) {
               />
             </label>
           ))}
+        </div>
+        
+        <button className="btn-send" onClick={handleCheck}>
+          Sprawdź diagnozę
+        </button>
+
+        <div className="wynik">
+          {view === "none" ? (
+            <p className="placeholder-text">Wybierz objawy i kliknij przycisk, aby zobaczyć wynik</p>
+          ) : (
+            <div className="result-box">
+              <strong>Wykryto: {view.replace(/_/g, ", ")}</strong>
+              <p>Na podstawie wybranych objawów zalecamy sprawdzenie sekcji "Co możesz zrobić samemu" poniżej.</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

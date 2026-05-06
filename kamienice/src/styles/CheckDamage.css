@@ -1,12 +1,16 @@
 /* CheckDamage.css */
 
+.video-container iframe, .video-container video {
+    border-radius: 20px;
+    border: none;
+}
+
 .check-damage {
   background-color: #ffffff;
   border-radius: 15px;
   padding: 25px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border-left: 6px solid #D4A373;
+  border-left: 6px solid #CAD1A7; /* Akcent zielony */
 }
 
 .check-damage h2 {
@@ -16,7 +20,6 @@
   text-transform: capitalize;
 }
 
-/* Wideo */
 .video-container {
   width: 100%;
   border-radius: 12px;
@@ -30,7 +33,6 @@
   display: block;
 }
 
-/* Sekcja diagnozy */
 .diagnosis-section h3 {
   font-size: 1.2rem;
   color: #34495e;
@@ -49,8 +51,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background-color: #f8f9fa;
-  border: 2px solid #D4A373;
+  background-color: #ffffff;
+  border: 2px solid #CAD1A7;
   border-radius: 10px;
   cursor: pointer;
   font-weight: 500;
@@ -58,21 +60,18 @@
 }
 
 .checkbox-item:hover {
-  background-color: #fcf5ee;
-  border-color: #D4A373;
+  background-color: #f0f3ed;
 }
 
-/* Ukrycie domyślnego checkboxa i customizacja (opcjonalnie) */
 .checkbox-item input[type="checkbox"] {
   width: 20px;
   height: 20px;
-  accent-color: #D4A373;
+  accent-color: #CAD1A7;
 }
 
-/* Przycisk akcji */
 .btn-send {
   width: 100%;
-  background-color: #CCD5AE;
+  background-color: #CAD1A7;
   color: white;
   border: none;
   padding: 15px;
@@ -85,30 +84,13 @@
 }
 
 .btn-send:hover {
-  background-color: #CCD5AE;
+  background-color: #BCC398;
   transform: translateY(-2px);
 }
 
-.btn-send:active {
-  transform: translateY(0);
-}
-
-/* Wynik i Porada */
-.wynik {
-  margin-top: 20px;
-  min-height: 80px;
-}
-
-.placeholder-text {
-  text-align: center;
-  color: #95a5a6;
-  font-style: italic;
-  font-size: 0.9rem;
-}
-
 .result-box {
-  background-color: #FAEDCD;
-  border: 1px solid #D4A373;
+  background-color: #f0f3ed;
+  border: 1px solid #CAD1A7;
   padding: 15px;
   border-radius: 8px;
   color: #2c3e50;
@@ -117,25 +99,11 @@
 
 .result-box strong {
   display: block;
-  color: #D4A373;
+  color: #BCC398;
   margin-bottom: 5px;
 }
 
 @keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsywność */
-@media (min-width: 600px) {
-  .checkbox-group {
-    /*grid-template-columns: 1fr 1fr;*/
-      flex-direction: column;
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
