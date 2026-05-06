@@ -17,7 +17,8 @@ export default function CheckDamage({ element, onSymptomsChange }) {
     },
     okno: {
       title: "Okno",
-      videoSrc: "okno-test.mp4",
+      videoSrc: "https://www.youtube.com/embed/kiitzsEiGQw?si=6aKtovTCSGsH2CO9",
+        isYoutube: true,
       options: [
         { id: "wieje", label: "Wieje od ramy" },
         { id: "paruje", label: "Paruje między szybami" },
