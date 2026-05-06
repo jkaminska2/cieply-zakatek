@@ -76,7 +76,7 @@ export default function DoAlone({ element, activeSymptoms = [] }) {
 
   return (
     <div className="doAlone">
-      <h3>{activeSymptoms.length > 0 ? "Zalecane działania dla Ciebie:" : "Ogólne porady:"}</h3>
+      <h3>Co możesz zrobić sam:</h3>
       <ul className="instruction-list">
         {filteredSteps.map((step) => (
           <li key={step.id} className="instruction-item">

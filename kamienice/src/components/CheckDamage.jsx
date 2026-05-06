@@ -94,21 +94,6 @@ export default function CheckDamage({ element, onSymptomsChange }) {
             </label>
           ))}
         </div>
-        
-        <button className="btn-send" onClick={handleCheck}>
-          Sprawdź diagnozę
-        </button>
-
-        <div className="wynik">
-          {view === "none" ? (
-            <p className="placeholder-text">Wybierz objawy i kliknij przycisk, aby zobaczyć wynik</p>
-          ) : (
-            <div className="result-box">
-              <strong>Wykryto: {view.replace(/_/g, ", ")}</strong>
-              <p>Na podstawie wybranych objawów zalecamy sprawdzenie sekcji "Co możesz zrobić samemu" poniżej.</p>
-            </div>
-          )}
-        </div>
       </div>
     </div>
   );
