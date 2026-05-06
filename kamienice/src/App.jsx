@@ -8,7 +8,7 @@ export default function App() {
 
   return (
     <div className="main">
-      <h1 className="haslo">Ciepły zakątek</h1>
+      <Navbar></Navbar>
 
       <div className="content-layout">
         <div className="model-container">
