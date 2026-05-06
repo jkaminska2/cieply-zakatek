@@ -11,6 +11,8 @@ export default function CheckDamage({ element, onSymptomsChange }) {
         { id: "grzanie", label: "grzanie w ścianę, a nie w pokój" },
         { id: "kurz", label: "zakurzone żebra" },
         { id: "zimny_dol", label: "zimny na dole" },
+          { id: "osad", label: "Osad" },
+          { id: "pęknięcie", label: "pęknięcie rury" },
           { id: "zimno", label: "czuję, że w pokoju jest chłodno, mimo gorącego grzejnika" },
         { id: "inne", label: "Inne" }
       ]

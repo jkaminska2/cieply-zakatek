@@ -10,7 +10,7 @@
   border-radius: 15px;
   padding: 25px;
   margin-bottom: 20px;
-  border-left: 6px solid #CAD1A7; /* Akcent zielony */
+  border-left: 6px solid #798553; /* Akcent zielony */
 }
 
 .check-damage h2 {
@@ -52,7 +52,7 @@
   align-items: center;
   padding: 15px 20px;
   background-color: #ffffff;
-  border: 2px solid #CAD1A7;
+  border: 2px solid #798553;
   border-radius: 10px;
   cursor: pointer;
   font-weight: 500;
@@ -66,12 +66,12 @@
 .checkbox-item input[type="checkbox"] {
   width: 20px;
   height: 20px;
-  accent-color: #CAD1A7;
+  accent-color: #798553;
 }
 
 .btn-send {
   width: 100%;
-  background-color: #CAD1A7;
+  background-color: #798553;
   color: white;
   border: none;
   padding: 15px;
@@ -84,13 +84,13 @@
 }
 
 .btn-send:hover {
-  background-color: #BCC398;
+  background-color: #798553;
   transform: translateY(-2px);
 }
 
 .result-box {
   background-color: #f0f3ed;
-  border: 1px solid #CAD1A7;
+  border: 1px solid #798553;
   padding: 15px;
   border-radius: 8px;
   color: #2c3e50;
@@ -99,7 +99,7 @@
 
 .result-box strong {
   display: block;
-  color: #BCC398;
+  color: #798553;
   margin-bottom: 5px;
 }
 
