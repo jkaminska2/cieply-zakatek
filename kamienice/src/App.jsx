@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import ElementWindow from "./components/ElementWindow";
+import Navbar from "./components/Navbar";
 
 export default function App() {
   const [selectedElement, setSelectedElement] = useState(null);

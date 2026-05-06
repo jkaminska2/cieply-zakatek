@@ -1,5 +1,5 @@
-import { useState } from "react";
-import "../styles/Form.css";
+import { useState, useEffect } from "react";
+import "../styles/form.css";
 
 export default function Form() {
   const [selectedMode, setSelectedMode] = useState("diagnosis");
@@ -47,6 +47,21 @@ export default function Form() {
     handleElementChange(e);
     setModElemChosen(true);
   };
+
+  const [currentPlaceholder, setCurrentPlaceholder] = useState(0);
+  const hints = [
+    "Opisz problem, np. 'kaloryfer jest zimny na dole'...",
+    "Np. 'uszczelka w oknie przepuszcza powietrze'...",
+    "Np. 'piec wydaje dziwne dźwięki przy starcie'...",
+    "Opisz usterkę swoimi słowami, AI pomoże...",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPlaceholder((prev) => (prev + 1) % hints.length);
+    }, 3000); // Zmiana co 3 sekundy
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="container">
@@ -98,11 +113,14 @@ export default function Form() {
               ))}
             </div>
 
-            <input
-              className="input"
-              placeholder="Opisz problem"
-              onBlur={handleInputBlur}
-            />
+            <div className="input-group">
+              <div className="ai-badge">✨ AI Support</div>
+              <input
+                className="input input-ai"
+                placeholder={hints[currentPlaceholder]}
+                onBlur={handleInputBlur}
+              />
+            </div>
 
             <select className="input" onChange={handleElementSelect}>
               <option>Kaloryfer</option>
