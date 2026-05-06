@@ -6,25 +6,28 @@ export default function DoAlone({ element, activeSymptoms = [] }) {
 
   const stepsGrzejnik = [
     {
-      id: "odpowietrzanie",
-      symptom: "zimny_dol",
-      title: "Odpowietrzyć grzejnik",
-      desc: "Jeśli góra grzejnika jest zimna, potrzebujesz kluczyka za ok. 2-5 zł. Włóż go w zawór, przekręć lekko, aż usłyszysz syk powietrza, a potem poczuj kropelkę wody. Zakręć i gotowe!",
-    },
-    {
       id: "ekran",
-      title: "Założyć ekran zagrzejnikowy",
-      desc: "Kup srebrną matę w markecie (ok. 20 zł). Wsuń ją za grzejnik i przyklej do ściany taśmą dwustronną. Dzięki temu ciepło wróci do pokoju, zamiast uciekać w zimną ścianę kamienicy.",
+      symptom: "grzanie",
+      title: "Ekran zagrzejnikowy",
+      desc: "Kup w markecie budowlanym matę zagrzejnikową (styropian z folią aluminiową). Co robi: Odbija promieniowanie cieplne od ściany z powrotem do pokoju. Efekt: Ściana za grzejnikiem przestaje ciągnąć ciepło, a temperatura w pokoju może wzrosnąć o 1–2°C bez zmiany ustawień pieca.",
     },
     {
-      id: "odsloniecie",
-      title: "Odsłonić grzejnik",
-      desc: "Podwiń zasłony tak, by nie zakrywały grzejnika ani termostatu. Jeśli zasłony są długie, ciepło ucieka prosto w okno, zamiast ogrzewać pokój.",
+        id: "bariery",
+        symptom: "zimno",
+        title: "Usuń bariery dla powietrza",
+        desc: "Odsłoń grzejnik. Długie, ciężkie zasłony, które zakrywają kaloryfer, to najgorszy wróg. Jeśli muszą być, wetknij je za grzejnik. Usuń też ozdobne zabudowy grzejników – one duszą ciepło.",
     },
     {
-      id: "czyszczenie",
-      title: "Wyczyścić żebra grzejnika",
-      desc: "Kurz to izolator - działa jak koc na grzejniku. Użyj wilgotnej szmatki lub szczotki na długim kiju, by wymieść kurz ze środka żeberek.",
+        id: "kurz",
+        symptom: "kurz",
+        title: "Wyczyść żebra grzejnika",
+        desc: "Kurz to świetny izolator (w negatywnym sensie). Jeśli masz stary grzejnik żeliwny lub panelowy z tzw. grzebieniem w środku, warstwa kurzu działa jak koc, który nie pozwala ciepłu uciec do pokoju. Rozwiązanie: Odkurz grzejnik w środku (można to zrobić suszarką do włosów, wydmuchując kurz na mokrą szmatkę położoną pod grzejnikiem).",
+    },
+    {
+        id: "szczelność",
+        symptom: "zimny_dol",
+        title: "Sprawdź szczelność przy rurach",
+        desc: "W kamienicach rury często przechodzą przez stropy do sąsiadów. Wokół tych rur często są szpary (dziury w tynku). Rozwiązanie: Załataj te otwory (nawet wełną mineralną lub masą szpachlową). To kominy, przez które ucieka ciepłe powietrze z Twojego mieszkania do sąsiada lub do piwnicy.",
     },
   ];
 
@@ -33,18 +36,32 @@ export default function DoAlone({ element, activeSymptoms = [] }) {
       id: "uszczelki",
       symptom: "wieje",
       title: "Wymienić uszczelki",
-      desc: "Kup samoprzylepne uszczelki gumowe (EPDM). Wyjdź stare, wyczyść ramę alkoholem i naklej nowe w miejscach, gdzie czuć powiew zimnego powietrza.",
+      desc: "Kup gumowe uszczelki profilowe (np. typu E, P lub D) w markecie budowlanym. Jak to zrobić: Umyj i odtłuść ramę okna, a następnie przyklej uszczelkę tam, gdzie skrzydło styka się z ramą.Trik: Aby sprawdzić, gdzie najbardziej wieje, przesuń zapaloną zapalniczkę wokół ramy – tam, gdzie płomień mocno drga, musisz dać grubszą uszczelkę.",
     },
     {
-      id: "tryb_zimowy",
-      title: "Ustawić tryb zimowy",
-      desc: "Większość nowoczesnych okien ma bolce na boku skrzydła. Przekręć je kluczem imbusowym tak, by mocniej dociskały uszczelkę do ramy (szczelina powinna być mniejsza).",
+        id: "folia okienna",
+        symptom: "zimny_dol",
+        title: "Termoizolacyjna folia okienna",
+        desc: "To tania, przezroczysta folia, którą przykleja się do ramy okiennej za pomocą taśmy dwustronnej i naciąga suszarką do włosów. Co robi: Tworzy dodatkową poduszkę powietrzną między szybą a pokojem. Działa jak dodatkowa szyba, drastycznie ograniczając ucieczkę ciepła przez szkło.",
     },
     {
-      id: "folia_termiczna",
-      title: "Nakleić folię termoizolacyjną",
-      desc: "To tania przezroczysta folia, którą nakleja się na ramę i naciąga suszarką. Tworzy dodatkową poduszkę powietrzną, która działa jak trzecia szyba.",
+        id: "Akryl lub silikon w szczeliny",
+        symptom: "zimny_dol",
+        title: "Akryl lub silikon w szczeliny",
+        desc: "Jeśli widzisz pęknięcia między ramą okna a ścianą (tynk): Rozwiązanie: Wypełnij je akrylem budowlanym. Jest tani, łatwy w nakładaniu i można go malować. Jeśli wieje spod parapetu, użyj silikonu lub pianki montażowej w sprayu (jeśli dziura jest duża).",
     },
+      {
+          id: "Wałki",
+          symptom: "zimny_dol",
+          title: "\"Wałki\" pod okna (Metoda babuni)",
+          desc: "To najstarszy, ale skuteczny sposób na nieszczelne parapety i dolne krawędzie okien. Rozwiązanie: Połóż na parapecie zwinięty koc, gruby ręcznik lub specjalny ozdobny \"wałek\" wypełniony piaskiem lub tkaniną. Zablokuje to dopływ zimnego powietrza, które opada na podłogę.",
+      },
+      {
+          id: "Rolety i zasłony",
+          symptom: "zimny_dol",
+          title: "Rolety i zasłony",
+          desc: "W kamienicach zima \"wchodzi\" przez szyby najmocniej po zachodzie słońca. Rozwiązanie: Gdy tylko zacznie się ściemniać, zasuń rolety i grube zasłony. Każda warstwa materiału to dodatkowa bariera dla zimna. Pamiętaj tylko, by odsłonić grzejnik, żeby ciepło szło na pokój, a nie pod zasłonę.",
+      },
   ];
 
   const allSteps = element.toLowerCase() === "grzejnik" ? stepsGrzejnik : stepsOkno;
