@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import ElementWindow from "./components/ElementWindow";
 import Navbar from "./components/Navbar";
-import model from './model.png'
 
 function showTooltip(text) {
   const t = document.getElementById("cursor-tooltip");
@@ -33,7 +32,7 @@ export default function App() {
         <div className="model-container">
           <div className="model-wrapper">
             {/* Obrazek musi być tłem dla hotspotów */}
-            <img src={model} alt="Model" className="side-model" />
+            <img src="/model.png" alt="Model" className="side-model" />
 
             {/* OKNO */}
             <div
