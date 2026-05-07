@@ -32,7 +32,7 @@ export default function App() {
         <div className="model-container">
           <div className="model-wrapper">
             {/* Obrazek musi być tłem dla hotspotów */}
-            <img src="/model.png" alt="Model" className="side-model" />
+            <img src="/cieply-zakatek/model.png" alt="Model" className="side-model" />
 
             {/* OKNO */}
             <div
