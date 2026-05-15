@@ -25,6 +25,9 @@
 span{
   padding-right: 10px;
 }
+.instruction-list {
+  padding: 5px;
+}
 
 .instruction-item {
   margin-bottom: 12px;

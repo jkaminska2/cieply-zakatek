@@ -66,8 +66,6 @@ export default function CheckDamage({ element, onSymptomsChange }) {
           {currentConfig.isYoutube ? (
               /* Renderowanie YouTube */
               <iframe
-                  width="100%"
-                  height="360"
                   src={currentConfig.videoSrc}
                   title={currentConfig.title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
