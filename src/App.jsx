@@ -82,7 +82,7 @@ export default function App() {
                 behavior: "smooth",
               });
             }}>
-            <img src="piec.png" alt="Piec" />
+            <img src="/cieply-zakatek/piec.png" alt="Piec" />
             <span className="label">Piec</span>
           </button>
           <button className="furniture-button" onClick={() => setSelectedElement("okno")}
@@ -92,7 +92,7 @@ export default function App() {
                   behavior: "smooth",
               });
             }}>
-            <img src="okno.png" alt="Okno" />
+            <img src="/cieply-zakatek/okno.png" alt="Okno" />
             <span className="label">Okno</span>
           </button>
           <button className="furniture-button" onClick={() => setSelectedElement("okno")}
@@ -102,7 +102,7 @@ export default function App() {
                   behavior: "smooth",
               });
             }}>
-            <img src="grzejnik.png" alt="Grzejnik" />
+            <img src="/cieply-zakatek/grzejnik.png" alt="Grzejnik" />
             <span className="label">Grzejnik</span>
           </button>
           <button className="furniture-button" onClick={() => setSelectedElement("okno")}
@@ -112,7 +112,7 @@ export default function App() {
                   behavior: "smooth",
               });
             }}>
-            <img src="drzwi.png" alt="Drzwi" />
+            <img src="/cieply-zakatek/drzwi.png" alt="Drzwi" />
             <span className="label">Drzwi</span>
           </button>
           <button className="furniture-button" onClick={() => setSelectedElement("okno")}
@@ -122,7 +122,7 @@ export default function App() {
                   behavior: "smooth",
               });
             }}>
-            <img src="wentylacja.png" alt="Wentylacja" />
+            <img src="/cieply-zakatek/wentylacja.png" alt="Wentylacja" />
             <span className="label">Wentylacja</span>
           </button>
           <button className="furniture-button" onClick={() => setSelectedElement("okno")}
@@ -132,7 +132,7 @@ export default function App() {
                   behavior: "smooth",
               });
             }}>
-            <img src="gniazdko.png" alt="Gniazdko" />
+            <img src="/cieply-zakatek/gniazdko.png" alt="Gniazdko" />
             <span className="label">Gniazdko</span>
           </button>
         </div>
