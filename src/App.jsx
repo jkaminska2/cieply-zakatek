@@ -21,7 +21,7 @@ function moveTooltip(e) {
 }
 
 export default function App() {
-  const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 800;
   const [selectedElement, setSelectedElement] = useState(null);
   
 
@@ -33,7 +33,7 @@ export default function App() {
         <div className="model-container">
           <div className="model-wrapper">
             {/* Obrazek musi być tłem dla hotspotów */}
-            <img src="/cieply-zakatek/model.png" alt="Model" className="side-model" />
+            <img src="/cieply-zakatek/modelv2.png" alt="Model" className="side-model" />
 
             {/* OKNO */}
             <div
