@@ -26,3 +26,6 @@ git push origin gh-pages --force
 git checkout main
 
 Write-Host "Deploy zakończony! Strona powinna działać za 10–30 sekund."
+
+# W razie problemu z odpaleniem skryptu wpisz w konsolę:
+# Set-ExecutionPolicy RemoteSigned
