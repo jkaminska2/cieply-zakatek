@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles/ElementWindow.css";
 import DoAlone from "./DoAlone";
 import CheckDamage from "./CheckDamage";
-import Specialist from "./Specialist";
+import Specialist from "./Specialist"; // Importujemy nowego fachowca
 
 export default function ElementWindow({ element }) {
   const [selectedSymptoms, setSelectedSymptoms] = useState([]);
@@ -17,15 +17,19 @@ export default function ElementWindow({ element }) {
 
       <CheckDamage
         element={element}
-        onSymptomsChange={setSelectedSymptoms}
+        onSymptomsChange={(symptoms) => {
+          setSelectedSymptoms(symptoms);
+          setShowResults(false); // Ukryj wyniki, dopóki znowu nie kliknie przycisku
+        }}
         onConfirm={() => setShowResults(true)}
       />
 
-      <>
-        <DoAlone element={element} activeSymptoms={selectedSymptoms} />
-
-        <Specialist element={element} />
-      </>
+      {showResults && selectedSymptoms.length > 0 && (
+        <>
+          <DoAlone element={element} activeSymptoms={selectedSymptoms} />
+          <Specialist element={element} activeSymptoms={selectedSymptoms} />
+        </>
+      )}
     </div>
   );
 }

@@ -1,38 +1,118 @@
 import { useState } from "react";
 import Form from "./Form";
-import "../styles/DoAlone.css"; // Używamy tych samych stylów dla spójności
+import "../styles/DoAlone.css";
 
-export default function Specialist({ element }) {
+export default function Specialist({ element, activeSymptoms = [] }) {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  // Przykładowe dane sytuacji wymagających fachowca
-  const specialistCases = {
+  const specialistDatabase = {
     grzejnik: [
-      { id: 1, title: "Wymiana całego zaworu termostatycznego" },
-      { id: 2, title: "Przeciek na rurach doprowadzających" },
-      { id: 3, title: "Montaż nowego grzejnika" }
+      {
+        id: "hydraulik_wyciek",
+        symptom: "wyciek_rdza",
+        title: "Uszczelnienie wycieku lub wymiana zaworu głównego grzejnika"
+      },
+      {
+        id: "hydraulik_Plukanie",
+        symptom: "chlodno_mimo_grzania",
+        title: "Odmulanie i płukanie instalacji starego grzejnika żeliwnego"
+      }
     ],
     okno: [
-      { id: 1, title: "Wymiana pękniętej szyby zespolonej" },
-      { id: 2, title: "Naprawa uszkodzonego mechanizmu okucia" },
-      { id: 3, title: "Montaż nawiewników okiennych" }
+      {
+        id: "szklarz_szyba",
+        symptom: "paruje_szyby",
+        title: "Wymiana pękniętego lub nieszczelnego pakietu szyby zespolonej"
+      },
+      {
+        id: "serwis_okuc",
+        symptom: "zepsute_okucie",
+        title: "Kompleksowa naprawa lub wymiana wyrobionych okuć okiennych"
+      }
+    ],
+    piec: [
+      {
+        id: "zdun_dym",
+        symptom: "ulatnia_dym",
+        title: "Pilne czyszczenie, uszczelnianie przewodów i przemurowanie pieca"
+      },
+      {
+        id: "zdun_kafle",
+        symptom: "popekane_kafle",
+        title: "Uzupełnianie pękniętych kafli konstrukcyjnych specjalną glinką zduńską"
+      },
+      {
+        id: "kominiarz_ciag",
+        symptom: "brak_ciagu",
+        title: "Mechaniczne czyszczenie pionu dymowego przez certyfikowanego kominiarza"
+      }
+    ],
+    drzwi: [
+      {
+        id: "slusarz_zamek",
+        symptom: "luzna_klamka",
+        title: "Wymiana zużytego zamka wpuszczanego w zabytkowych drzwiach"
+      },
+      {
+        id: "stolarz_drzwi",
+        symptom: "cienkie_skrzydlo",
+        title: "Profesjonalne wygłuszenie skrzydła drzwiowego lub montaż nowych drzwi"
+      }
+    ],
+    wentylacja: [
+      {
+        id: "kominiarz_grzyb",
+        symptom: "grzyb_kratka",
+        title: "Ekspertyza kominiarska pionu wentylacyjnego budynku i usuwanie zarodników"
+      },
+      {
+        id: "kominiarz_zapachy",
+        symptom: "zapachy_sasiadow",
+        title: "Sprawdzenie szczelności i drożności przewodów wentylacyjnych w kamienicy"
+      }
+    ],
+    gniazdko: [
+      {
+        id: "elektryk_iskry",
+        symptom: "skwierczy_iskrzy",
+        title: "Wymiana wypalonych przewodów aluminiowych oraz montaż nowego gniazda"
+      },
+      {
+        id: "elektryk_przypalenia",
+        symptom: "przypalenia",
+        title: "Modernizacja przeciążonego obwodu elektrycznego mieszkania"
+      },
+      {
+        id: "elektryk_puszka",
+        symptom: "wypada_sciana",
+        title: "Osadzenie nowej puszki elektroinstalacyjnej w starym kruchym tynku"
+      }
     ]
   };
 
-  const cases = specialistCases[element] || [];
+  const key = element ? element.toLowerCase() : "";
+  const allExpertCases = specialistDatabase[key] || [];
+
+  const filteredCases = allExpertCases.filter((item) =>
+    activeSymptoms.includes(item.symptom)
+  );
+
+  if (filteredCases.length === 0) return null;
 
   return (
-    <div className="doAlone" style={{marginTop: '30px'}}>
-      <h3>Kiedy wezwać specjalistę?</h3>
-      <p className="subtitle">W tych przypadkach zalecamy kontakt z fachowcem:</p>
-      
+    <div className="doAlone">
+      <h3>Wymagana pomoc specjalisty!</h3>
+      <p className="subtitle">Wykryto usterki, których nie należy naprawiać samodzielnie:</p>
+
       <div className="instruction-list">
-        {cases.map((item) => (
-          <div className="instruction-item" key={item.id}>
+        {filteredCases.map((item) => (
+          <div className="instruction-item" key={item.id} >
             <div className="instruction-header">
-              <span>{item.title}</span>
-              <button 
-                className="btn-see-how" 
+              <span>
+                ⚠️ {item.title}
+              </span>
+              <button
+                className="btn-see-how"
                 onClick={() => setIsFormOpen(true)}
               >
                 Formularz
@@ -42,13 +122,12 @@ export default function Specialist({ element }) {
         ))}
       </div>
 
-      {/* MODAL Z FORMULARZEM */}
       {isFormOpen && (
-        <div className="modal-overlay" onClick={() => setIsFormOpen(false)} style={{zIndex: 3000}}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{maxWidth: '800px', width: '90%'}}>
+        <div className="modal-overlay" onClick={() => setIsFormOpen(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-btn" onClick={() => setIsFormOpen(false)}>×</button>
-            <div style={{padding: '20px'}}>
-               <Form />
+            <div>
+              <Form />
             </div>
           </div>
         </div>
