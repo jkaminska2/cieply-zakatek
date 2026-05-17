@@ -28,4 +28,7 @@ git checkout main
 Write-Host "Deploy zakończony! Strona powinna działać za 10–30 sekund."
 
 # W razie problemu z odpaleniem skryptu wpisz w konsolę:
-# Set-ExecutionPolicy RemoteSigned
+# Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# Aby uruchomić, wpisz w konsolę:
+# .\deploy.ps1
