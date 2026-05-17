@@ -1,28 +1,86 @@
 /* Form.css */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+h2 {
+  font-size: 2.4rem;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  text-align: center;
+}
 
 .container {
-  min-height: 100vh;
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  padding: 40px 20px 80px;
   background-color: #f8f9fa;
-  padding: 20px;
+  box-sizing: border-box;
 }
 
 .card {
   width: 100%;
-  max-width: 650px;
+  max-width: 760px;
   background: #ffffff;
-  padding: 40px;
+  padding: 48px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border: 1px solid #e9ecef;
 }
 
+.subtitle {
+  text-align: center;
+  color: #7b8794;
+  margin-top: -8px;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
 .form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 32px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.section-card {
+  background: #fafbf8;
+  border: 1px solid #e5e9da;
+  border-radius: 18px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.section-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+}
+
+.section-header {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 label {
@@ -92,7 +150,7 @@ label {
 
 /* Badge nad inputem */
 .ai-badge {
-  position: absolute;
+  /* position: absolute; */
   top: -12px;
   right: 12px;
   background: linear-gradient(135deg, #e76f51, #9b51e0);
@@ -104,6 +162,18 @@ label {
   z-index: 10;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   letter-spacing: 0.5px;
+}
+
+.input,
+.input-ai {
+  min-height: 58px;
+  font-size: 17px;
+}
+
+.ai-row {
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  gap: 14px;
 }
 
 /* Specyficzne style dla Inputa AI */
@@ -129,4 +199,96 @@ label {
   color: #a08d8a;
   transition: opacity 0.5s ease-in-out;
   font-style: italic;
+}
+
+button {
+  background: #c1cf7c;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #b0c836;
+}
+
+.btn-primary {
+  min-height: 58px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.input::placeholder {
+  color: #97a0ab;
+}
+
+@media (max-width: 768px) {
+  .ai-row {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+.location-row {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 14px;
+}
+
+.progress-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step-label {
+  text-align: center;
+  color: #7b8794;
+  font-weight: 600;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e9ecef;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #cad1a7;
+  transition: width 0.3s ease;
+}
+
+.step-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.btn-secondary {
+  min-height: 58px;
+  padding: 12px 22px;
+  border-radius: 12px;
+  border: 2px solid #cad1a7;
+  background: white;
+  color: #798553;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #f5f7f2;
 }
