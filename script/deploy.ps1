@@ -31,4 +31,4 @@ Write-Host "Deploy zakończony! Strona powinna działać za 10–30 sekund."
 # Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 # Aby uruchomić, wpisz w konsolę:
-# .\deploy.ps1
+# .\script\deploy.ps1
