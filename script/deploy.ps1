@@ -24,6 +24,8 @@ git push origin gh-pages --force
 
 # 8. Powrót na main
 git checkout main
+git fetch origin
+git reset --hard origin/main
 
 Write-Host "Deploy zakonczony! Strona powinna dzialac za 10-30 sekund."
 
