@@ -4,9 +4,11 @@
     box-sizing: border-box;
 }
 
+/* ---------------- NAVBAR ---------------- */
+
 .navbar {
   font-family: 'Montserrat', sans-serif;
-  background: #ffffff;
+  background: #ffffff; /* MUSI być tło, inaczej blur przejdzie */
   height: 70px;
   width: 100%;
   display: flex;
@@ -14,12 +16,12 @@
   justify-content: space-between;
   padding: 0 32px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-radius: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 9999; /* NAD WSZYSTKIM */
 }
 
+/* LOGO */
 .logo {
   font-family: 'Manrope', sans-serif;
   color: #798553;
@@ -31,9 +33,7 @@
   text-transform: lowercase;
 }
 
-.logo span {
-  color: #8b5e34;
-}
+/* ---------------- DESKTOP MENU ---------------- */
 
 .nav-links {
   list-style: none;
@@ -49,7 +49,6 @@
   position: relative;
   padding: 4px 0;
   transition: color 0.25s ease;
-
 }
 
 .nav-links a::after {
@@ -70,4 +69,85 @@
 
 .nav-links a:hover {
   color: #8b5e34;
+}
+
+/* ---------------- HAMBURGER ---------------- */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 10000; /* NAJWYŻEJ */
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #4a4a4a;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ---------------- MOBILE MENU ---------------- */
+
+@media (max-width: 904px) {
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+    text-align: center;
+
+    /* UKRYCIE MENU */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    z-index: 9000; /* POD HAMBURGEREM, NAD OVERLAY */
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* ---------------- OVERLAY ---------------- */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  /* Make overlay transparent so navbar keeps its background color */
+  background: transparent;
+  backdrop-filter: none;
+
+  z-index: 5000; /* POD NAVBAREM I MENU */
 }
