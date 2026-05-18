@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <h2 className="logo">Ciepły zakątek</h2>
+        <h1 className="logo">Ciepły zakątek</h1>
 
         <div
           className={`hamburger ${open ? "open" : ""}`}

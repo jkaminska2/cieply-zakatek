@@ -53,7 +53,42 @@ export default function App() {
                 onMouseMove={moveTooltip}
                 onClick={() => setSelectedElement("grzejnik")}
             >
-
+            </div>
+            {/* PIEC */}
+            <div
+              className="hotspot stove-hotspot"
+              onMouseEnter={() => showTooltip("Piec")}
+              onMouseLeave={hideTooltip}
+              onMouseMove={moveTooltip}
+              onClick={() => setSelectedElement("piec")}
+            >
+            </div>
+            {/* DRZWI */}
+            <div
+              className="hotspot door-hotspot"
+              onMouseEnter={() => showTooltip("Drzwi")}
+              onMouseLeave={hideTooltip}
+              onMouseMove={moveTooltip}
+              onClick={() => setSelectedElement("drzwi")}
+            >
+            </div>
+            {/* WENTYLACJA */}
+            <div
+              className="hotspot ventilation-hotspot"
+              onMouseEnter={() => showTooltip("Wentylacja")}
+              onMouseLeave={hideTooltip}
+              onMouseMove={moveTooltip}
+              onClick={() => setSelectedElement("wentylacja")}
+            >
+            </div>
+            {/* GNIAZDKO */}
+            <div
+              className="hotspot socket-hotspot"
+              onMouseEnter={() => showTooltip("Gniazdko")}
+              onMouseLeave={hideTooltip}
+              onMouseMove={moveTooltip}
+              onClick={() => setSelectedElement("gniazdko")}
+            >
             </div>
           </div>
         </div>
@@ -85,7 +120,7 @@ export default function App() {
             <img src="/cieply-zakatek/piec.png" alt="Piec" />
             <span className="label">Piec</span>
           </button>
-          <button className="furniture-button" onClick={() => setSelectedElement("okno")}
+          <button className="furniture-button"
               onClick={() => {
                 setSelectedElement("okno");
                 document.getElementById("info-panel").scrollIntoView({
@@ -95,7 +130,7 @@ export default function App() {
             <img src="/cieply-zakatek/okno.png" alt="Okno" />
             <span className="label">Okno</span>
           </button>
-          <button className="furniture-button" onClick={() => setSelectedElement("okno")}
+          <button className="furniture-button"
               onClick={() => {
                 setSelectedElement("grzejnik");
                 document.getElementById("info-panel").scrollIntoView({
@@ -105,7 +140,7 @@ export default function App() {
             <img src="/cieply-zakatek/grzejnik.png" alt="Grzejnik" />
             <span className="label">Grzejnik</span>
           </button>
-          <button className="furniture-button" onClick={() => setSelectedElement("okno")}
+          <button className="furniture-button"
               onClick={() => {
                 setSelectedElement("drzwi");
                 document.getElementById("info-panel").scrollIntoView({
@@ -115,7 +150,7 @@ export default function App() {
             <img src="/cieply-zakatek/drzwi.png" alt="Drzwi" />
             <span className="label">Drzwi</span>
           </button>
-          <button className="furniture-button" onClick={() => setSelectedElement("okno")}
+          <button className="furniture-button"
               onClick={() => {
                 setSelectedElement("wentylacja");
                 document.getElementById("info-panel").scrollIntoView({
@@ -125,7 +160,7 @@ export default function App() {
             <img src="/cieply-zakatek/wentylacja.png" alt="Wentylacja" />
             <span className="label">Wentylacja</span>
           </button>
-          <button className="furniture-button" onClick={() => setSelectedElement("okno")}
+          <button className="furniture-button"
               onClick={() => {
                 setSelectedElement("gniazdko");
                 document.getElementById("info-panel").scrollIntoView({

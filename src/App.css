@@ -183,8 +183,6 @@ img {
 .window-hotspot {
   top: 25%;
   left: 33%;
-  width: 10%;
-  height: 15%;
   width: 20%;
   height: 35%;
 }
@@ -192,10 +190,36 @@ img {
 .radiator-hotspot {
   top: 66%;
   left: 33%;
-  width: 5%;
-  height: 5%;
   width: 18%;
   height: 21%;
+}
+
+.door-hotspot {
+  top: 19%;
+  left: 57%;
+  width: 20%;
+  height: 73%;
+}
+
+.ventilation-hotspot {
+  top: 23%;
+  left: 82%;
+  width: 11%;
+  height: 10%;
+}
+
+.socket-hotspot {
+  top: 73%;
+  left: 84.5%;
+  width: 5%;
+  height: 8%;
+}
+
+.stove-hotspot {
+  top: 29%;
+  left: 6%;
+  width: 20%;
+  height: 65%;
 }
 
 .buttons {

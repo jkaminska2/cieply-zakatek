@@ -57,7 +57,7 @@
 
 .checkbox-item {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   padding: 15px 20px;
   background-color: #ffffff;
@@ -76,6 +76,8 @@
   width: 20px;
   height: 20px;
   accent-color: #798553;
+  text-align: left;
+  margin-right: 15px;
 }
 
 .btn-send {
