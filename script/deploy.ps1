@@ -3,7 +3,7 @@ npm install
 npm run build
 
 # 2. Usuń lokalny branch, jeśli istnieje
-git branch -D gh-pages -ErrorAction SilentlyContinue
+git branch -D gh-pages 2>$null
 
 # 3. Usuń branch z GitHuba
 git push origin --delete gh-pages 2>$null
@@ -12,7 +12,7 @@ git push origin --delete gh-pages 2>$null
 git checkout --orphan gh-pages
 
 # 5. Czyszczenie plików
-git rm -rf .
+git rm -rf . 2>$null
 
 # 6. Kopiuj zawartość dist
 Copy-Item -Path "dist\*" -Destination "." -Recurse -Force
