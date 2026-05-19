@@ -1,3 +1,5 @@
+import "./styles/Dofinansowania.css";
+
 export default function Dofinansowania() {
   return (
     <div className="page">

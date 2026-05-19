@@ -1,3 +1,5 @@
+import "./styles/Forum.css";
+
 export default function Forum() {
   return (
     <div className="page">

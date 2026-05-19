@@ -13,7 +13,7 @@
 
 /* GLOBALNE OBRAZKI */
 img {
-  min-width: 500px;
+  min-width: 600px;
   margin: 10px;
 }
 
@@ -58,7 +58,8 @@ img {
 /* PANEL INFORMACJI */
 .info-panel {
   flex: 1;
-  max-width: 400px;
+  /* Increase desktop panel width so `.element` can expand (1.5x wider) */
+  max-width: 600px;
   min-height: 600px;
 }
 
@@ -76,6 +77,7 @@ img {
   border: 3px dashed #798553;
   color: #2c3e50;
   animation: fadeIn 0.5s ease;
+  margin-left: 12px;
 }
 
 .placeholder-box p {

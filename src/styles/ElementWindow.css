@@ -4,14 +4,18 @@
   display: flex;
   flex-direction: column;
   /* gap: 20px; */
-  width: 100%;
+  box-sizing: border-box;
+  /* keep a small horizontal gutter so it never overflows the viewport */
+  width: calc(100% - 14px);
+  max-width: 1200px;
   padding: 10px;
   background-color: #ffffff;
   border-radius: 30px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.05);
   animation: fadeIn 0.4s ease;
   position: relative;
-  margin-left: 7px;
+  margin: 10px 7px;
+  margin-left: 12px;
 }
 
 .element h1 {
@@ -89,5 +93,15 @@
   .close-btn {
     top: 10px;
     right: 10px;
+  }
+}
+
+/* Desktop: make the element slightly wider and align it to the right
+   while keeping a safe right gutter so it never overflows the viewport */
+@media (min-width: 801px) {
+  .element {
+    width: min(1200px, calc(100% - 40px));
+    margin-left: auto;
+    margin-right: 20px;
   }
 }
