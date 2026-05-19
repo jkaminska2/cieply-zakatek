@@ -241,8 +241,8 @@ button:hover {
 }
 
 .location-row {
-  display: grid;
-  grid-template-columns: 1fr 180px;
+  display: flex;
+  flex-direction: column;
   gap: 14px;
 }
 
