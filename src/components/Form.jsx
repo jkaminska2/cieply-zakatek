@@ -46,16 +46,7 @@ export default function Form() {
   return (
     <div className="container">
       <div className="card">
-        <h1>System diagnozy i modernizacji</h1>
-
-        <select
-          className="input"
-          value={selectedMode}
-          onChange={(e) => setSelectedMode(e.target.value)}
-        >
-          <option value="modernization">Modernizacja</option>
-          <option value="diagnosis">Diagnoza</option>
-        </select>
+        <h1>System modernizacji</h1>
 
         {selectedMode === "diagnosis" ? (
           <DiagnosisForm specialists={SPECIALISTS} />
@@ -68,4 +59,15 @@ export default function Form() {
       </div>
     </div>
   );
+}
+
+{
+  /* <select
+          className="input"
+          value={selectedMode}
+          onChange={(e) => setSelectedMode(e.target.value)}
+        >
+          <option value="modernization">Modernizacja</option>
+          <option value="diagnosis">Diagnoza</option>
+        </select> */
 }
