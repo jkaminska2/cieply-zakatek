@@ -81,10 +81,10 @@ export default function Forum() {
               <div className="input-group">
                 <label>Kategoria</label>
                 <select value={category} onChange={(e) => setCategory(e.target.value)}>
-                  <option value="Grzejniki">🔥 Grzejniki i Ogrzewanie</option>
-                  <option value="Okna">🪟 Okna i Izolacja</option>
-                  <option value="Dofinansowania">💰 Dofinansowania</option>
-                  <option value="Inne">💬 Wolne rozmowy</option>
+                  <option value="Grzejniki">Grzejniki i Ogrzewanie</option>
+                  <option value="Okna">Okna i Izolacja</option>
+                  <option value="Dofinansowania">Dofinansowania</option>
+                  <option value="Inne">Wolne rozmowy</option>
                 </select>
               </div>
 
