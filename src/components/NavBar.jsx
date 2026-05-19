@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/NavBar.css";
 
 export default function Navbar() {
@@ -19,10 +20,9 @@ export default function Navbar() {
         </div>
 
         <ul className={`nav-links ${open ? "active" : ""}`}>
-          <li><a href="#">Strona główna</a></li>
-          <li><a href="#">Forum</a></li>
-          <li><a href="#">Fundacje</a></li>
-          <li><a href="#">Dofinansowania</a></li>
+          <li><Link to="/" onClick={() => setOpen(false)}>Strona główna</Link></li>
+          <li><Link to="/forum" onClick={() => setOpen(false)}>Forum</Link></li>
+          <li><Link to="/dofinansowania" onClick={() => setOpen(false)}>Dofinansowania</Link></li>
         </ul>
       </nav>
 

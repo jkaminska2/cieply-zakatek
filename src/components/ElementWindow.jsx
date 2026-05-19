@@ -10,9 +10,9 @@ export default function ElementWindow({ element }) {
 
   return (
     <div className="element">
-      <button className="close-btn" onClick={() => window.location.reload()}>
+      {/* <button className="close-btn" onClick={() => window.location.reload()}>
         ×
-      </button>
+      </button> */}
       <h1>{element}</h1>
 
       <CheckDamage
